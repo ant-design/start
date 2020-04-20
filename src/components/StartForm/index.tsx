@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { Form, Input, Select, Button } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
 import { Store } from 'rc-field-form/es/interface';
-import AuthorsInput from './AuthorsInput';
 
 const { Option } = Select;
 
@@ -97,16 +96,16 @@ const StartForm: FC<StartFormProps> = ({ value, onChange, loading = false }) => 
         <Select mode="tags" placeholder="关键字" />
       </Form.Item>
       <Form.Item
-        name="authors"
+        name="author"
         label="作者"
         rules={[
           {
             required: true,
-            message: '请输入关键字',
+            message: '请输入作者',
           },
         ]}
       >
-        <AuthorsInput />
+        <Input placeholder="请输入作者" />
       </Form.Item>
       <Form.Item name="antd" label="antd主题风格">
         <Select defaultValue="primary" style={{ width: '100%' }}>

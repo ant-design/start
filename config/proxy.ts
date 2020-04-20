@@ -15,7 +15,7 @@ export default {
     '/start/': {
       target: 'http://localhost:3000',
       changeOrigin: true,
-      pathRewrite: { '/start/': '' },
+      pathRewrite: { '^': '' },
     },
   },
   test: {

@@ -7,6 +7,6 @@
     "start": "umi dev"
   },
   "keywords": {{{keywords}}},
-  "authors": {{{authors}}},
+  "author": "{{author}}",
   "license": "MIT"
 }

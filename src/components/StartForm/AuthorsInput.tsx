@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect, FC } from 'react';
 import { Table, Button, Input, message, Popconfirm, Divider } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
+
 interface AuthorsInputProps {
   value?: any;
   onChange?: (value: any) => void;
@@ -28,8 +29,6 @@ const AuthorsInput: FC<AuthorsInputProps> = ({ value = [], onChange }) => {
     const target = getRowByKey(key, newData);
     if (target) {
       target[fieldName] = e.target.value;
-      console.log(target);
-
       setData(newData);
     }
   };
@@ -86,7 +85,6 @@ const AuthorsInput: FC<AuthorsInputProps> = ({ value = [], onChange }) => {
         return;
       }
       const target = getRowByKey(key) || {};
-      console.log(target);
       if (!target.email || !target.name || !target.url) {
         message.error('请填写完整成员信息。');
         // @ts-ignore

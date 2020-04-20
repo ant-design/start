@@ -7,16 +7,15 @@ const router = express.Router();
 
 router.post('/', async function (req, res) {
   try {
-    const { name, keywords = [], description, authors = [] } = req.body;
+    const { name, keywords = [], description, author = '' } = req.body;
     // "xiaohuoni <448627663@qq.com> (https://github.com/xiaohuoni)"
-    const authorsStr = authors.map((author) => `${author.name} <${author.email}> (${author.url})`);
     const props = {
       filePath: new Date().getTime(),
       context: {
         name,
         description,
         keywords: JSON.stringify(keywords),
-        authors: JSON.stringify(authorsStr),
+        author,
       },
     };
     const args = yParser(process.argv.slice(2));
