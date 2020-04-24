@@ -31,6 +31,12 @@ export default defineConfig({
   // umi routes: https://umijs.org/docs/routing
   routes: [
     {
+      path: '/',
+      name: 'start',
+      icon: 'smile',
+      component: './index',
+    },
+    {
       path: '/user',
       layout: false,
       routes: [
@@ -42,7 +48,6 @@ export default defineConfig({
         },
       ],
     },
-
     {
       path: '/welcome',
       name: 'welcome',
